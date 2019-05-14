@@ -387,7 +387,7 @@ for oo = 1:50
                         Vis.Nodes.path(i) = sucIDs(k);
                     end
                 else
-                    if Vis.Nodes.QMIN(i) >= Vis.Nodes.QMIN(sucIDs(k)) && Vis.Nodes.Prune(sucIDs(k)) ~= -1
+                    if Vis.Nodes.QMIN(i) <= Vis.Nodes.QMIN(sucIDs(k)) && Vis.Nodes.Prune(sucIDs(k)) ~= -1
                         Vis.Nodes.QMIN(i) = Vis.Nodes.QMIN(sucIDs(k));
                         Vis.Nodes.QMAX(i) = Vis.Nodes.QMAX(sucIDs(k));
                         Vis.Nodes.path(i) = sucIDs(k);
