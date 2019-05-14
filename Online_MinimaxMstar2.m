@@ -99,7 +99,7 @@ for oo = 1:50
                 Vis.Nodes.Parent(Count+1) = j;
                 if Vis.Nodes.Prune(j) ~= -1
                     if in_environment( [Vis.Nodes.Robot_x(j)+1, Vis.Nodes.Target_y(j)] , environment , epsilon )...
-                            &&in_environment( [Vis.Nodes.Robot_x(j)+0.5, Vis.Nodes.Target_y(j)] , environment , epsilon )
+                            &&in_environment( [Vis.Nodes.Robot_x(j)+0.3, Vis.Nodes.Target_y(j)] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j)+1;
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j);
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j);
@@ -126,7 +126,7 @@ for oo = 1:50
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
                     if in_environment( [Vis.Nodes.Robot_x(j)-1, Vis.Nodes.Target_y(j)] , environment , epsilon )...
-                            &&in_environment( [Vis.Nodes.Robot_x(j)-0.5, Vis.Nodes.Target_y(j)] , environment , epsilon )
+                            &&in_environment( [Vis.Nodes.Robot_x(j)-0.3, Vis.Nodes.Target_y(j)] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j)-1;
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j);
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j);
@@ -153,7 +153,7 @@ for oo = 1:50
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
                     if in_environment( [Vis.Nodes.Robot_x(j), Vis.Nodes.Target_y(j)+1] , environment , epsilon )...
-                            && in_environment( [Vis.Nodes.Robot_x(j), Vis.Nodes.Target_y(j)+0.5] , environment , epsilon )
+                            && in_environment( [Vis.Nodes.Robot_x(j), Vis.Nodes.Target_y(j)+0.3] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j);
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j)+1;
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j);
@@ -179,7 +179,8 @@ for oo = 1:50
                 Vis.Nodes.Parent(Count+1) =j;
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
-                    if in_environment( [Vis.Nodes.Robot_x(j), Vis.Nodes.Robot_y(j)-1] , environment , epsilon )
+                    if in_environment( [Vis.Nodes.Robot_x(j), Vis.Nodes.Robot_y(j)-1] , environment , epsilon )...
+                            &&in_environment( [Vis.Nodes.Robot_x(j), Vis.Nodes.Robot_y(j)-0.3] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j);
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j)-1;
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j);
@@ -208,7 +209,7 @@ for oo = 1:50
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
                     if in_environment( [Vis.Nodes.Target_x(j)+1, Vis.Nodes.Target_y(j)] , environment , epsilon )...
-                            &&in_environment( [Vis.Nodes.Target_x(j)+0.5, Vis.Nodes.Target_y(j)] , environment , epsilon )
+                            &&in_environment( [Vis.Nodes.Target_x(j)+0.3, Vis.Nodes.Target_y(j)] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j);
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j);
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j)+1;
@@ -250,7 +251,7 @@ for oo = 1:50
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
                     if in_environment( [Vis.Nodes.Target_x(j)-1, Vis.Nodes.Target_y(j)] , environment , epsilon )...
-                            && in_environment( [Vis.Nodes.Target_x(j)-0.5, Vis.Nodes.Target_y(j)] , environment , epsilon )
+                            && in_environment( [Vis.Nodes.Target_x(j)-0.3, Vis.Nodes.Target_y(j)] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j);
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j);
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j)-1;
@@ -290,7 +291,7 @@ for oo = 1:50
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
                    if in_environment( [Vis.Nodes.Target_x(j), Vis.Nodes.Target_y(j)+1] , environment , epsilon )...
-                            && in_environment( [Vis.Nodes.Target_x(j), Vis.Nodes.Target_y(j)+0.5] , environment , epsilon )
+                            && in_environment( [Vis.Nodes.Target_x(j), Vis.Nodes.Target_y(j)+0.3] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j);
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j);
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j);
@@ -328,7 +329,7 @@ for oo = 1:50
                 Vis.Nodes.Generation(Count+1) = Vis.Nodes.Generation(j)+1;
                 if Vis.Nodes.Prune(j) ~= -1
                     if in_environment( [Vis.Nodes.Target_x(j), Vis.Nodes.Target_y(j)-1] , environment , epsilon )...
-                            && in_environment( [Vis.Nodes.Target_x(j), Vis.Nodes.Target_y(j)-0.5] , environment , epsilon )
+                            && in_environment( [Vis.Nodes.Target_x(j), Vis.Nodes.Target_y(j)-0.3] , environment , epsilon )
                         Vis.Nodes.Robot_x(Count+1) = Vis.Nodes.Robot_x(j);
                         Vis.Nodes.Robot_y(Count+1) = Vis.Nodes.Robot_y(j);
                         Vis.Nodes.Target_x(Count+1) = Vis.Nodes.Target_x(j);
