@@ -21,12 +21,12 @@ X_MAX = environment_max_x+0.1*(environment_max_x-environment_min_x);
 Y_MIN = environment_min_y-0.1*(environment_max_y-environment_min_y);
 Y_MAX = environment_max_y+0.1*(environment_max_y-environment_min_y);
 
-Initial_Robot = [8;8];
+Initial_Robot = [8;10];
 % Initial_Target = [7;9];
 % sensor_x = [6	6	6	6	6	6	6	6	6	6	6	6	6	7	8	8	8	8	8	7];
 % sensor_y =	[1	2	3	4	5	6	7	8	9	10	11	12	13	13	13	14	15	16	17	17];
 sensor_x =  [7];
-sensor_y =	[9];
+sensor_y =	[10];
 Teammate = [10,10];
 Record_Robot_path_x = Initial_Robot(1);
 Record_Robot_path_y = Initial_Robot(2);
@@ -79,7 +79,7 @@ for oo = 1:50
     Vis.Nodes.path = 0;
     Vis.Nodes.Prune = 0;
     Vis.Nodes.QMAX = -1110;
-    Vis.Nodes.QMIN = -1000;
+    Vis.Nodes.QMIN = 1000;
     
     level = 4;
     Count = 1;
@@ -111,7 +111,7 @@ for oo = 1:50
                         Vis.Nodes.Robot_Reward(Count+1) = bwarea(Vis.Nodes.Robot_Region{Count+1});
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
                         Vis.Nodes.QMAX(Count+1) = -1110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                     else
                         Vis.Nodes.Prune(Count+1) = -1;
                     end
@@ -137,8 +137,8 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = poly2mask(V{1}(:,1),V{1}(:,2),50, 50) | Vis.Nodes.Robot_Region{j};
                         Vis.Nodes.Robot_Reward(Count+1) = bwarea(Vis.Nodes.Robot_Region{Count+1});
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMAX(Count+1) = -1110;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                     else
                         Vis.Nodes.Prune(Count+1) = -1;
                     end
@@ -164,8 +164,8 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = poly2mask(V{1}(:,1),V{1}(:,2),50, 50) | Vis.Nodes.Robot_Region{j};
                         Vis.Nodes.Robot_Reward(Count+1) = bwarea(Vis.Nodes.Robot_Region{Count+1});
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMAX(Count+1) = -1100;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                     else
                         Vis.Nodes.Prune(Count+1) = -1;
                     end
@@ -190,8 +190,8 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = poly2mask(V{1}(:,1),V{1}(:,2),50, 50) | Vis.Nodes.Robot_Region{j};
                         Vis.Nodes.Robot_Reward(Count+1) = bwarea(Vis.Nodes.Robot_Region{Count+1});
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMAX(Count+1) = -1110;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                     else
                         Vis.Nodes.Prune(Count+1) = -1;
                     end
@@ -218,8 +218,8 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = Vis.Nodes.Robot_Region{j} ;
                         Vis.Nodes.Robot_Reward(Count+1) = Vis.Nodes.Robot_Reward(j);
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMAX(Count+1) = -1110;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                         
                         
                         if in_environment( [Vis.Nodes.Robot_x(Count+1) Vis.Nodes.Robot_y(Count+1)] , V , epsilon )
@@ -260,8 +260,8 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = Vis.Nodes.Robot_Region{j} ;
                         Vis.Nodes.Robot_Reward(Count+1) = Vis.Nodes.Robot_Reward(j);
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMAX(Count+1) = -1110;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                         if in_environment( [Vis.Nodes.Robot_x(Count+1) Vis.Nodes.Robot_y(Count+1)] , V , epsilon )
                             Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j)+1;
                         end
@@ -300,7 +300,7 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = Vis.Nodes.Robot_Region{j} ;
                         Vis.Nodes.Robot_Reward(Count+1) = Vis.Nodes.Robot_Reward(j);
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
+                        Vis.Nodes.QMAX(Count+1) = 1110;
                         Vis.Nodes.QMIN(Count+1) = -1000;
                         if in_environment( [Vis.Nodes.Robot_x(Count+1) Vis.Nodes.Robot_y(Count+1)] , V , epsilon )
                             Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j)+1;
@@ -338,8 +338,8 @@ for oo = 1:50
                         Vis.Nodes.Robot_Region{Count+1} = Vis.Nodes.Robot_Region{j} ;
                         Vis.Nodes.Robot_Reward(Count+1) = Vis.Nodes.Robot_Reward(j);
                         Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j);
-                        Vis.Nodes.QMAX(Count+1) = -110;
-                        Vis.Nodes.QMIN(Count+1) = -1000;
+                        Vis.Nodes.QMAX(Count+1) = -1110;
+                        Vis.Nodes.QMIN(Count+1) = 1000;
                         if in_environment( [Vis.Nodes.Robot_x(Count+1) Vis.Nodes.Robot_y(Count+1)] , V , epsilon )
                             Vis.Nodes.Detection_time(Count+1) = Vis.Nodes.Detection_time(j)+1;
                         end
@@ -382,12 +382,12 @@ for oo = 1:50
             for k = 1:nnz(sucIDs)
                 if mod(Vis.Nodes.Generation(i),2)&& Vis.Nodes.Prune(sucIDs(k)) ~= -1
                     if Vis.Nodes.QMAX(i) < Vis.Nodes.QMAX(sucIDs(k))
-                        Vis.Nodes.QMAX(i) = min(Vis.Nodes.QMAX(sucIDs(k)),Vis.Nodes.QMAX(i));
-                        Vis.Nodes.QMIN(i) = max(Vis.Nodes.QMIN(sucIDs(k)),Vis.Nodes.QMIN(i));
+                        Vis.Nodes.QMAX(i) = max(Vis.Nodes.QMAX(sucIDs(k)),Vis.Nodes.QMAX(i));
+                        Vis.Nodes.QMIN(i) = min(Vis.Nodes.QMIN(sucIDs(k)),Vis.Nodes.QMIN(i));
                         Vis.Nodes.path(i) = sucIDs(k);
                     end
                 else
-                    if Vis.Nodes.QMIN(i) <= Vis.Nodes.QMIN(sucIDs(k)) && Vis.Nodes.Prune(sucIDs(k)) ~= -1
+                    if Vis.Nodes.QMIN(i) >= Vis.Nodes.QMIN(sucIDs(k)) && Vis.Nodes.Prune(sucIDs(k)) ~= -1
                         Vis.Nodes.QMIN(i) = Vis.Nodes.QMIN(sucIDs(k));
                         Vis.Nodes.QMAX(i) = Vis.Nodes.QMAX(sucIDs(k));
                         Vis.Nodes.path(i) = sucIDs(k);
