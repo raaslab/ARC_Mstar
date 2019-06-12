@@ -16,7 +16,7 @@
 %Clear the desk
 
 
-function []= plot_environment(Robot_path_x, Robot_path_y, Target_path_x,Target_path_y)
+function []= plot_environment(Robot_path_x, Robot_path_y, Target_path_x,Target_path_y,environment)
 format long;
 
 %Robustness constant
@@ -29,7 +29,6 @@ snap_distance = 0.05;
 
 
 %Read environment geometry from file
-environment = read_vertices_from_file('./MCTS2.environment');
 % sensor_x = [2,3,4,5,6,6,6,6,7,8,9,10,11,11,11,11,11,11];
 % sensor_y =	[3,3,3,3,3,4,5,6,6,6,6,6,6,7,8,9,10,11];
 
