@@ -16,7 +16,7 @@
 %Clear the desk
 
 
-function []= plot_environment(Robot_path_x, Robot_path_y, Target_path_x,Target_path_y,environment)
+function []= plot_environment(Robot_path_x, Robot_path_y, Target_path_x,Target_path_y,Teammate,environment)
 format long;
 
 %Robustness constant
@@ -85,8 +85,8 @@ current_y = Robot_path_y;
 sensor_x = Target_path_x;
 sensor_y = Target_path_y;
 
-Teamate_x = [10];
-Teamate_y = [10];
+Teamate_x = Teammate(1);
+Teamate_y = Teammate(2);
 
 Total_scan = false(1000,1000);
 reward_step = 0;
